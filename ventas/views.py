@@ -14,6 +14,7 @@ def mostrar_venta(request):
 def agregar_venta(request):
     if request.method=="POST":
             costo = Productos.cost     
+            id= Productos.id_producto
             nombreCom = request.POST["txt_nombres"]
             tipoDoc = request.POST["select_tipo_doc"]
             numDoc = request.POST["txt_num_doc"]
@@ -24,7 +25,7 @@ def agregar_venta(request):
             telefonoDoc = request.POST["txt_telefono"]
             data = Venta(nombres=nombreCom, tipo_doc=tipoDoc, num_doc=numDoc, 
                                 correo= correoDoc, direccion=direccionDoc,depto=deptoDoc,ciudad=ciudadDoc,
-                                telefono=telefonoDoc,total_venta=costo)
+                                telefono=telefonoDoc,total_venta=costo, id_producto= id)
             data.save()
             nombre_producto = Productos.name        
             Productos.cantidad_stock -= 1

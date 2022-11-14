@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
+    <title>Search Employee</title>
+</head>
+<style>
+    
+    table {
+        border: 0px outset;
+        border-spacing: 10px;
+        padding: 200px;
+        margin-left: 100px;
+        margin-right: auto;
+    }
+
+    th,
+    td {
+        padding: 5px;
+        border: 1px solid;
+    }
+</style>
+
+<body>
+    <h2 style="text-align:center"> Catalogo</h2>
+    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+        <table  style=" width: 10vw; margin: 30px auto; " align="center" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Categoria</th>
+                    <th>Costo</th>
+                    <th>Descripcion</th>
+                    <th>Portada</th>             
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                    <td>{{producto.name}}</td>
+                    <td>{{producto.category}}</td>
+                    <td>{{producto.cost}}</td>
+                   <td>{{producto.description}}</td>
+                    <td>{{producto.imagen}}</td>                    
+                    <td>
+                        
+                        <button class="btn btn-outline-dark"><a href="/agregar_venta/{{producto.pk}}">Comprar</a></button>
+                    </td>
+                </tr>
+              
+            </tbody>
+        </table>
+    <div/>
+    <br><br>
+    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+        <table  style=" width: 10vw; margin: 30px auto; " align="center" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Categoria</th>
+                    <th>Costo</th>
+                    <th>Descripcion</th>
+                    <th>Portada</th>             
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                    <td>{{producto.name}}</td>
+                    <td>{{producto.category}}</td>
+                    <td>{{producto.cost}}</td>
+                   <td>{{producto.description}}</td>
+                    <td>{{producto.imagen}}</td>                    
+                    <td>
+                        
+                        <button class="btn btn-outline-dark"><a href="/agregar_venta/{{producto.pk}}">Comprar</a></button>
+                    </td>
+                </tr>
+               
+            </tbody>
+        </table>
+    <div/>
+    <br><br>
+    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+        <table  style=" width: 10vw; margin: 30px auto; " align="center" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Categoria</th>
+                    <th>Costo</th>
+                    <th>Descripcion</th>
+                    <th>Portada</th>             
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                    <td>{{producto.name}}</td>
+                    <td>{{producto.category}}</td>
+                    <td>{{producto.cost}}</td>
+                   <td>{{producto.description}}</td>
+                    <td>{{producto.imagen}}</td>                    
+                    <td>
+                        
+                        <button class="btn btn-outline-dark"><a href="/agregar_venta/{{producto.pk}}">Comprar</a></button>
+                    </td>
+                </tr>
+              
+            </tbody>
+        </table>
+    <div/>
+</body>
+
+</html>
