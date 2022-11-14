@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from inventario.views import  editar_producto, eliminar_producto, mostrar_productos, vista_busqueda_productos, obtener_producto, agregar_producto, mostrar_productos, editar_producto, eliminar_producto
 from ventas.views import agregar_venta, mostrar_venta
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('busqueda_productos/', vista_busqueda_productos),

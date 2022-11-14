@@ -1,5 +1,4 @@
 from datetime import datetime
-import smtplib
 from django.contrib.auth.models import User
 from django.shortcuts import redirect, render
 from inventario.models import Productos
@@ -7,9 +6,9 @@ from ventas.models import Venta
 
 
 def mostrar_venta(request):
-
-    productos = Productos.objects.all().order_by('id_producto')
-    return render(request,'ventas.html',{'productos':productos})
+ productos = Productos.objects.all().order_by('id_producto')
+ 
+ return render(request,'ventas.html',{'productos':productos})
 
 def agregar_venta(request):
     if request.method=="POST":
@@ -32,7 +31,7 @@ def agregar_venta(request):
             Productos.save()
             correo_venta (correoDoc,nombreCom,nombre_producto,costo,direccionDoc)
             print("Venta exitosa")
-            return redirect('/agregar_venta')                  
+            return redirect('add_venta.html')                  
     else:
         print("Venta no exitosa")
         return render (request, "add_venta.html")
