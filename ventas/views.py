@@ -1,16 +1,19 @@
 from datetime import datetime
-from django.contrib.auth.models import User
 from django.shortcuts import redirect, render
 from inventario.models import Productos
 from ventas.models import Venta
 
 
 def mostrar_venta(request):
- productos = Productos.objects.all().order_by('id_producto')
- 
+ productos = Productos.objects.all() 
  return render(request,'ventas.html',{'productos':productos})
+ 
+def agregar_venta(request,pk):
+ productos = Productos.objects.get(id_producto=pk)
+ return render(request,'add_venta.html',{'productos':productos})
 
-def agregar_venta(request):
+def agregar_venta2(request,pk):
+    
     if request.method=="POST":
             costo = Productos.cost     
             id= Productos.id_producto
@@ -31,7 +34,7 @@ def agregar_venta(request):
             Productos.save()
             correo_venta (correoDoc,nombreCom,nombre_producto,costo,direccionDoc)
             print("Venta exitosa")
-            return redirect('add_venta.html')                  
+            return redirect('agregar_venta/')                  
     else:
         print("Venta no exitosa")
         return render (request, "add_venta.html")

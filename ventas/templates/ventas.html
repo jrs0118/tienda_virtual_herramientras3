@@ -28,8 +28,9 @@
 
 <body>
     <h2 style="text-align:center"> Catálogo</h2>
+    {% csrf_token %}
     <div class="table-wrapper-scroll-y my-custom-scrollbar">
-        <table  style=" width: 10vw; margin: 30px auto; " align="center" class="table table-bordered table-striped">
+        <table  style=" width: 100vw; margin: 300px auto; " align="center" class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>Nombre</th>
@@ -40,77 +41,24 @@
                 </tr>
             </thead>
             <tbody>
+                {% for producto in productos %}
                     <tr>
                     <td>{{producto.name}}</td>
                     <td>{{producto.category}}</td>
                     <td>{{producto.cost}}</td>
                    <td>{{producto.description}}</td>
-                    <td>{{producto.imagen}}</td>                    
+                 <!-- <td>{{producto.imagen.url}}</td> -->  
+                 <td><img src="{{producto.imagen.url}}" alt="" style="width:48px;height:48px;"> </td>             
                     <td>
                         
                         <button class="btn btn-outline-dark"><a href="/agregar_venta/{{producto.pk}}">Comprar</a></button>
                     </td>
                 </tr>
-              
+                {% endfor %}
             </tbody>
+
         </table>
-    <div/>
-    <br><br>
-    <div class="table-wrapper-scroll-y my-custom-scrollbar">
-        <table  style=" width: 10vw; margin: 30px auto; " align="center" class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Categoria</th>
-                    <th>Costo</th>
-                    <th>Descripcion</th>
-                    <th>Portada</th>             
-                </tr>
-            </thead>
-            <tbody>
-                    <tr>
-                    <td>{{producto.name}}</td>
-                    <td>{{producto.category}}</td>
-                    <td>{{producto.cost}}</td>
-                   <td>{{producto.description}}</td>
-                    <td>{{producto.imagen}}</td>                    
-                    <td>
-                        
-                        <button class="btn btn-outline-dark"><a href="/agregar_venta/{{producto.pk}}">Comprar</a></button>
-                    </td>
-                </tr>
-               
-            </tbody>
-        </table>
-    <div/>
-    <br><br>
-    <div class="table-wrapper-scroll-y my-custom-scrollbar">
-        <table  style=" width: 10vw; margin: 30px auto; " align="center" class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Categoria</th>
-                    <th>Costo</th>
-                    <th>Descripcion</th>
-                    <th>Portada</th>             
-                </tr>
-            </thead>
-            <tbody>
-                    <tr>
-                    <td>{{producto.name}}</td>
-                    <td>{{producto.category}}</td>
-                    <td>{{producto.cost}}</td>
-                   <td>{{producto.description}}</td>
-                    <td>{{producto.imagen}}</td>                    
-                    <td>
-                        
-                        <button class="btn btn-outline-dark"><a href="/agregar_venta/{{producto.pk}}">Comprar</a></button>
-                    </td>
-                </tr>
-              
-            </tbody>
-        </table>
-    <div/>
+    
 </body>
 
 </html>
