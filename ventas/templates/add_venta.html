@@ -11,8 +11,8 @@
   
     
  
-    <form enctype="multipart/form-data" style=" width: 50vw; margin-left : 25vw;" action="/agregar_venta/" method="POST">
-      
+    <form enctype="multipart/form-data" style=" width: 50vw; margin-left : 25vw;" action="/agregar_venta2/{{productos.pk}}" method="POST">
+        {% csrf_token%}
         <p>Costo: {{productos.cost}}</p>
         <p>id: {{productos.id_producto}}</p>
             <p>Nombres Completos: <input type="text" name="txt_nombres"class = "form-control"></p>  
@@ -24,7 +24,6 @@
                 <option value="registro">Registro civil</option>     
             </select>
             <p>Numero de documento: <input type="number" name="txt_num_doc"class = "form-control"></p>
-            <p>Correo electronico: <input type="email" name="txt_correo"class = "form-control"></p>
             <p>Direccion <input type="text" name="txt_direccion"class = "form-control"></p>
             <p>Departamento</p>         
             <select name="select_depto" id="deptoDoc">   
@@ -41,11 +40,15 @@
                 <option value="Envigado">Envigado</option>     
             </select>
             <p>Telefono <input type="text" name="txt_telefono"class = "form-control"></p>  
+            
+            {% csrf_token%}
+            <p>Correo electronico: <input type="email" name="txt_correo"class = "form-control"></p>
             <button align= "center" type="submit" class="btn btn-success">Finalizar compra</button>   
            
     </form>
     
-    <form style=" width: 50vw; margin-left : 25vw;"  action="/ventas/" method="POST">
+    <form style=" width: 50vw; margin-left : 25vw;"  action="/mostrar_venta/" method="POST">{% csrf_token%}
             
-            <button  align= "center" type="submit" class="btn btn-success">Catálogo</button>
-    </form>
+        <button type="submit" class="btn btn-success">Catálogo</button>
+</form>
+</body>
